@@ -71,3 +71,22 @@ http://localhost:8080/
 
  - https://quarkus.io/vision/continuum
  
+ # config de ssh et git
+ - dans le fichier C:\Users\xxx\.ssh ou le ~/.ssh
+
+Pour gérer plusieurs ssh keys pour github il faut y mettre un fichier nommé config et qui contient:
+
+``
+Host github_fred
+  Hostname github.com
+  IdentityFile ~/.ssh/github_rsa
+  #IdentitiesOnly yes
+  User git
+  
+Host github_mch
+  Hostname github.com
+  IdentityFile ~/ssh/github_mch_planner
+  #IdentitiesOnly yes
+  User git  
+ ``
+ 
