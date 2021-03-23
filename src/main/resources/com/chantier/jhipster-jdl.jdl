@@ -1,0 +1,144 @@
+
+/**
+ * MCD du chantier
+ */
+
+entity Chantier {
+	name String
+}
+
+entity GlobalActivity {
+	name String,
+    description String
+}
+
+entity Tasks {
+	name String,
+	description String,
+    //requiredSkill Skill,
+    startDate Date,
+    duration Long
+    priority TaskPriority
+}
+
+enum TaskPriority {
+	LOW, MEDIUM, HIGH
+}
+
+relationship OneToOne {
+	Chantier{address} to Address
+}
+
+relationship OneToMany {
+	// 1 chantier a plusieurs activites
+	Chantier{globalActivities} to GlobalActivity,
+    
+    //1 activite a plusieurs taches a traiter
+    GlobalActivity{Tasks} to Tasks,
+    
+    //1 equipe = 1 liste d'ouvriers
+    Chantier{employees} to Employee
+}
+
+/**
+ * MCD d'une Adresse
+ */
+
+
+entity Address {
+	streetName String,
+    streetCode Integer,
+    complementAdress String
+}
+
+entity PostalZipCode {
+	code String
+}
+
+entity City {
+	name String
+}
+
+relationship OneToOne {
+	PostalZipCode{city} to City,
+    Address{location} to PostalZipCode
+}
+
+/**
+ * MCD des Personnes
+ */
+
+entity Contact {
+	email String,
+	phoneNumber String
+}
+
+entity Person {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String
+}
+
+entity Client {
+	//person Person
+}
+
+relationship OneToOne {
+	Client{addressFacturation} to Address,
+    Client{addressHabitation} to Address,
+    Person{contact} to Contact
+}
+
+relationship OneToMany {
+	Client{chantiers} to Chantier
+}
+
+/**
+ * The Employee entity.
+ */
+entity Employee {
+	//person Person,
+	hireDate Instant,
+	tjm Long,
+    role EmployeeRole
+    
+    //relationships ci-dessous
+}
+
+enum EmployeeRole {
+	CHEF_EQUIPE, OUVRIER, BOSS
+}
+
+entity Skill {
+	skillName String,
+    skillCategory SkillCategory
+}
+
+entity SkillLevel {
+	level Integer
+}
+
+enum SkillCategory {
+	TUILE, TRANSPORT, RELATIONEL
+}
+
+
+relationship OneToMany {
+
+    //1 employee a plusieurs skills
+    //et plusieurs le meme skill peut appartenir a plusieurs employee
+	Employee{skills} to Skill
+}
+
+/*
+* MCD 
+*/
+entity Event {
+	//emitter Person,
+    //attachedObject Object
+    
+}
+
+  

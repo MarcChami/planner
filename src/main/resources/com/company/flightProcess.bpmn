@@ -1,0 +1,403 @@
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_XD21sDxsEDmBKclxIcB4iw" exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+  <bpmn2:itemDefinition id="_flightItem" structureRef="com.company.Flight"/>
+  <bpmn2:itemDefinition id="_passengerItem" structureRef="com.company.Passenger"/>
+  <bpmn2:itemDefinition id="_isPassengerApprovedBySecurityItem" structureRef="Boolean"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_SkippableInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_PriorityInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_CommentInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_DescriptionInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_CreatedByInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_TaskNameInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_GroupIdInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_ContentInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_NotStartedReassignInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_NotCompletedReassignInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_NotStartedNotifyInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_NotCompletedNotifyInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_passengerInputXItem" structureRef="com.company.Passenger"/>
+  <bpmn2:itemDefinition id="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_isPassengerApprovedBySecurityOutputXItem" structureRef="Boolean"/>
+  <bpmn2:itemDefinition id="__2C736038-6E6B-4B81-AE80-B95F3761D7A7_passengerOutputXItem" structureRef="com.company.Passenger"/>
+  <bpmn2:itemDefinition id="__588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_flightInputXItem" structureRef="com.company.Flight"/>
+  <bpmn2:itemDefinition id="__588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_passengerInputXItem" structureRef="com.company.Passenger"/>
+  <bpmn2:itemDefinition id="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_SkippableInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_PriorityInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_CommentInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_DescriptionInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_CreatedByInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_TaskNameInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_GroupIdInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_ContentInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_NotStartedReassignInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_NotCompletedReassignInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_NotStartedNotifyInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_NotCompletedNotifyInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_flightInputXItem" structureRef="com.company.Flight"/>
+  <bpmn2:itemDefinition id="__9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_flightOutputXItem" structureRef="com.company.Flight"/>
+  <bpmn2:signal id="_-1768060927" name="passengerRequestTicket"/>
+  <bpmn2:interface id="_588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_ServiceInterface" name="com.company.FlightService" implementationRef="com.company.FlightService">
+    <bpmn2:operation id="_588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_ServiceOperation" name="addPassengerToFlight" implementationRef="addPassengerToFlight"/>
+  </bpmn2:interface>
+  <bpmn2:interface id="_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_ServiceInterface" name="com.company.FlightService" implementationRef="com.company.FlightService">
+    <bpmn2:operation id="_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_ServiceOperation" name="createSeatAssignments" implementationRef="createSeatAssignments"/>
+  </bpmn2:interface>
+  <bpmn2:process id="flightProcess" drools:packageName="com.company" drools:version="1.0" drools:adHoc="false" name="flight-process" isExecutable="true" processType="Public">
+    <bpmn2:property id="flight" itemSubjectRef="_flightItem" name="flight"/>
+    <bpmn2:sequenceFlow id="_FF1950B5-759D-4350-968E-D6957AC2B9DF" sourceRef="_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8" targetRef="_73A4D85C-E170-4B0E-9AE8-CEE5DF46BF83"/>
+    <bpmn2:sequenceFlow id="_210CD055-AB60-4D39-AD5C-5037D5BF21E8" sourceRef="_7C752801-1F4B-4DB8-B97D-733F98BA0A63" targetRef="_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8">
+      <bpmn2:extensionElements>
+        <drools:metaData name="isAutoConnection.target">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="_937019B2-0EA7-4610-8BE8-B22032D22318" sourceRef="_6410A49B-2583-4457-8A1B-6D295C050D82" targetRef="_7C752801-1F4B-4DB8-B97D-733F98BA0A63">
+      <bpmn2:extensionElements>
+        <drools:metaData name="isAutoConnection.target">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:sequenceFlow>
+    <bpmn2:endEvent id="_73A4D85C-E170-4B0E-9AE8-CEE5DF46BF83">
+      <bpmn2:incoming>_FF1950B5-759D-4350-968E-D6957AC2B9DF</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:serviceTask id="_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8" drools:serviceimplementation="Java" drools:serviceinterface="com.company.FlightService" drools:serviceoperation="createSeatAssignments" name="Create Seat Assignments" implementation="Java" operationRef="_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_ServiceOperation">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Create Seat Assignments]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_210CD055-AB60-4D39-AD5C-5037D5BF21E8</bpmn2:incoming>
+      <bpmn2:outgoing>_FF1950B5-759D-4350-968E-D6957AC2B9DF</bpmn2:outgoing>
+      <bpmn2:ioSpecification>
+        <bpmn2:dataInput id="_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_flightInputX" drools:dtype="com.company.Flight" itemSubjectRef="__9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_flightInputXItem" name="flight"/>
+        <bpmn2:dataOutput id="_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_flightOutputX" drools:dtype="com.company.Flight" itemSubjectRef="__9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_flightOutputXItem" name="flight"/>
+        <bpmn2:inputSet>
+          <bpmn2:dataInputRefs>_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_flightInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet>
+          <bpmn2:dataOutputRefs>_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_flightOutputX</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:sourceRef>flight</bpmn2:sourceRef>
+        <bpmn2:targetRef>_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_flightInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation>
+        <bpmn2:sourceRef>_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_flightOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>flight</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+    </bpmn2:serviceTask>
+    <bpmn2:userTask id="_7C752801-1F4B-4DB8-B97D-733F98BA0A63" name="Finalize Passenger List">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Finalize Passenger List]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_937019B2-0EA7-4610-8BE8-B22032D22318</bpmn2:incoming>
+      <bpmn2:outgoing>_210CD055-AB60-4D39-AD5C-5037D5BF21E8</bpmn2:outgoing>
+      <bpmn2:ioSpecification>
+        <bpmn2:dataInput id="_7C752801-1F4B-4DB8-B97D-733F98BA0A63_TaskNameInputX" drools:dtype="Object" itemSubjectRef="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_TaskNameInputXItem" name="TaskName"/>
+        <bpmn2:dataInput id="_7C752801-1F4B-4DB8-B97D-733F98BA0A63_SkippableInputX" drools:dtype="Object" itemSubjectRef="__7C752801-1F4B-4DB8-B97D-733F98BA0A63_SkippableInputXItem" name="Skippable"/>
+        <bpmn2:inputSet>
+          <bpmn2:dataInputRefs>_7C752801-1F4B-4DB8-B97D-733F98BA0A63_TaskNameInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_7C752801-1F4B-4DB8-B97D-733F98BA0A63_SkippableInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:targetRef>_7C752801-1F4B-4DB8-B97D-733F98BA0A63_TaskNameInputX</bpmn2:targetRef>
+        <bpmn2:assignment>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression"><![CDATA[finalizePassengerList]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression"><![CDATA[_7C752801-1F4B-4DB8-B97D-733F98BA0A63_TaskNameInputX]]></bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:targetRef>_7C752801-1F4B-4DB8-B97D-733F98BA0A63_SkippableInputX</bpmn2:targetRef>
+        <bpmn2:assignment>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression"><![CDATA[false]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression"><![CDATA[_7C752801-1F4B-4DB8-B97D-733F98BA0A63_SkippableInputX]]></bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+    </bpmn2:userTask>
+    <bpmn2:startEvent id="_6410A49B-2583-4457-8A1B-6D295C050D82">
+      <bpmn2:outgoing>_937019B2-0EA7-4610-8BE8-B22032D22318</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:subProcess id="_40AA4B24-D143-4366-9905-7D743323CA44" name="Passenger Requests Ticket Subprocess" triggeredByEvent="true">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Passenger Requests Ticket Subprocess]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:property id="passenger" itemSubjectRef="_passengerItem" name="passenger"/>
+      <bpmn2:property id="isPassengerApprovedBySecurity" itemSubjectRef="_isPassengerApprovedBySecurityItem" name="isPassengerApprovedBySecurity"/>
+      <bpmn2:sequenceFlow id="_3D6A8B2F-D175-4181-9291-B7AD81A15FDB" sourceRef="_588057F7-A0DE-4ED9-A917-6F2F48DFC3BB" targetRef="_791F1D80-580A-40CE-AADA-AD772533C05F">
+        <bpmn2:extensionElements>
+          <drools:metaData name="isAutoConnection.target">
+            <drools:metaValue><![CDATA[true]]></drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+      </bpmn2:sequenceFlow>
+      <bpmn2:sequenceFlow id="_2742A6CB-0C90-4E94-AFD8-2FE44BB80E61" sourceRef="_5F3EFAC4-23B9-4CC7-A56F-CFE0840E9251" targetRef="_588057F7-A0DE-4ED9-A917-6F2F48DFC3BB">
+        <bpmn2:extensionElements>
+          <drools:metaData name="isAutoConnection.target">
+            <drools:metaValue><![CDATA[true]]></drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+        <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return isPassengerApprovedBySecurity;]]></bpmn2:conditionExpression>
+      </bpmn2:sequenceFlow>
+      <bpmn2:sequenceFlow id="_AD20DCAD-F259-451D-887F-62D75B708EC8" sourceRef="_5F3EFAC4-23B9-4CC7-A56F-CFE0840E9251" targetRef="_4494C0A3-D3E9-47D5-A87D-F16ADF56165E">
+        <bpmn2:extensionElements>
+          <drools:metaData name="isAutoConnection.target">
+            <drools:metaValue><![CDATA[true]]></drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+        <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return !isPassengerApprovedBySecurity;]]></bpmn2:conditionExpression>
+      </bpmn2:sequenceFlow>
+      <bpmn2:sequenceFlow id="_0783A607-D9AC-4406-A758-02474EE49FE6" sourceRef="_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444" targetRef="_5F3EFAC4-23B9-4CC7-A56F-CFE0840E9251">
+        <bpmn2:extensionElements>
+          <drools:metaData name="isAutoConnection.target">
+            <drools:metaValue><![CDATA[true]]></drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+      </bpmn2:sequenceFlow>
+      <bpmn2:sequenceFlow id="_DF60F595-7CD5-4F5C-B62D-73A291C22163" sourceRef="_2C736038-6E6B-4B81-AE80-B95F3761D7A7" targetRef="_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444">
+        <bpmn2:extensionElements>
+          <drools:metaData name="isAutoConnection.target">
+            <drools:metaValue><![CDATA[true]]></drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+      </bpmn2:sequenceFlow>
+      <bpmn2:endEvent id="_791F1D80-580A-40CE-AADA-AD772533C05F">
+        <bpmn2:incoming>_3D6A8B2F-D175-4181-9291-B7AD81A15FDB</bpmn2:incoming>
+      </bpmn2:endEvent>
+      <bpmn2:endEvent id="_4494C0A3-D3E9-47D5-A87D-F16ADF56165E" name="Passenger is not approved">
+        <bpmn2:extensionElements>
+          <drools:metaData name="elementname">
+            <drools:metaValue><![CDATA[Passenger is not approved]]></drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>_AD20DCAD-F259-451D-887F-62D75B708EC8</bpmn2:incoming>
+      </bpmn2:endEvent>
+      <bpmn2:serviceTask id="_588057F7-A0DE-4ED9-A917-6F2F48DFC3BB" drools:serviceimplementation="Java" drools:serviceinterface="com.company.FlightService" drools:serviceoperation="addPassengerToFlight" name="Add Passenger To Flight" implementation="Java" operationRef="_588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_ServiceOperation">
+        <bpmn2:extensionElements>
+          <drools:metaData name="elementname">
+            <drools:metaValue><![CDATA[Add Passenger To Flight]]></drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>_2742A6CB-0C90-4E94-AFD8-2FE44BB80E61</bpmn2:incoming>
+        <bpmn2:outgoing>_3D6A8B2F-D175-4181-9291-B7AD81A15FDB</bpmn2:outgoing>
+        <bpmn2:ioSpecification>
+          <bpmn2:dataInput id="_588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_flightInputX" drools:dtype="com.company.Flight" itemSubjectRef="__588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_flightInputXItem" name="flight"/>
+          <bpmn2:dataInput id="_588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_passengerInputX" drools:dtype="com.company.Passenger" itemSubjectRef="__588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_passengerInputXItem" name="passenger"/>
+          <bpmn2:inputSet>
+            <bpmn2:dataInputRefs>_588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_flightInputX</bpmn2:dataInputRefs>
+            <bpmn2:dataInputRefs>_588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_passengerInputX</bpmn2:dataInputRefs>
+          </bpmn2:inputSet>
+        </bpmn2:ioSpecification>
+        <bpmn2:dataInputAssociation>
+          <bpmn2:sourceRef>flight</bpmn2:sourceRef>
+          <bpmn2:targetRef>_588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_flightInputX</bpmn2:targetRef>
+        </bpmn2:dataInputAssociation>
+        <bpmn2:dataInputAssociation>
+          <bpmn2:sourceRef>passenger</bpmn2:sourceRef>
+          <bpmn2:targetRef>_588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_passengerInputX</bpmn2:targetRef>
+        </bpmn2:dataInputAssociation>
+      </bpmn2:serviceTask>
+      <bpmn2:startEvent id="_2C736038-6E6B-4B81-AE80-B95F3761D7A7" name="Passenger Request Ticket">
+        <bpmn2:extensionElements>
+          <drools:metaData name="elementname">
+            <drools:metaValue><![CDATA[Passenger Request Ticket]]></drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+        <bpmn2:outgoing>_DF60F595-7CD5-4F5C-B62D-73A291C22163</bpmn2:outgoing>
+        <bpmn2:dataOutput id="_2C736038-6E6B-4B81-AE80-B95F3761D7A7_passengerOutputX" drools:dtype="com.company.Passenger" itemSubjectRef="__2C736038-6E6B-4B81-AE80-B95F3761D7A7_passengerOutputXItem" name="passenger"/>
+        <bpmn2:dataOutputAssociation>
+          <bpmn2:sourceRef>_2C736038-6E6B-4B81-AE80-B95F3761D7A7_passengerOutputX</bpmn2:sourceRef>
+          <bpmn2:targetRef>passenger</bpmn2:targetRef>
+        </bpmn2:dataOutputAssociation>
+        <bpmn2:outputSet>
+          <bpmn2:dataOutputRefs>_2C736038-6E6B-4B81-AE80-B95F3761D7A7_passengerOutputX</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+        <bpmn2:signalEventDefinition signalRef="_-1768060927"/>
+      </bpmn2:startEvent>
+      <bpmn2:exclusiveGateway id="_5F3EFAC4-23B9-4CC7-A56F-CFE0840E9251" gatewayDirection="Diverging">
+        <bpmn2:incoming>_0783A607-D9AC-4406-A758-02474EE49FE6</bpmn2:incoming>
+        <bpmn2:outgoing>_AD20DCAD-F259-451D-887F-62D75B708EC8</bpmn2:outgoing>
+        <bpmn2:outgoing>_2742A6CB-0C90-4E94-AFD8-2FE44BB80E61</bpmn2:outgoing>
+      </bpmn2:exclusiveGateway>
+      <bpmn2:userTask id="_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444" name="Approve Passenger for Flight">
+        <bpmn2:extensionElements>
+          <drools:metaData name="elementname">
+            <drools:metaValue><![CDATA[Approve Passenger for Flight]]></drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>_DF60F595-7CD5-4F5C-B62D-73A291C22163</bpmn2:incoming>
+        <bpmn2:outgoing>_0783A607-D9AC-4406-A758-02474EE49FE6</bpmn2:outgoing>
+        <bpmn2:ioSpecification>
+          <bpmn2:dataInput id="_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_TaskNameInputX" drools:dtype="Object" itemSubjectRef="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_TaskNameInputXItem" name="TaskName"/>
+          <bpmn2:dataInput id="_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_passengerInputX" drools:dtype="com.company.Passenger" itemSubjectRef="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_passengerInputXItem" name="passenger"/>
+          <bpmn2:dataInput id="_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_SkippableInputX" drools:dtype="Object" itemSubjectRef="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_SkippableInputXItem" name="Skippable"/>
+          <bpmn2:dataOutput id="_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_isPassengerApprovedBySecurityOutputX" drools:dtype="Boolean" itemSubjectRef="__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_isPassengerApprovedBySecurityOutputXItem" name="isPassengerApprovedBySecurity"/>
+          <bpmn2:inputSet>
+            <bpmn2:dataInputRefs>_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_TaskNameInputX</bpmn2:dataInputRefs>
+            <bpmn2:dataInputRefs>_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_passengerInputX</bpmn2:dataInputRefs>
+            <bpmn2:dataInputRefs>_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_SkippableInputX</bpmn2:dataInputRefs>
+          </bpmn2:inputSet>
+          <bpmn2:outputSet>
+            <bpmn2:dataOutputRefs>_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_isPassengerApprovedBySecurityOutputX</bpmn2:dataOutputRefs>
+          </bpmn2:outputSet>
+        </bpmn2:ioSpecification>
+        <bpmn2:dataInputAssociation>
+          <bpmn2:targetRef>_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_TaskNameInputX</bpmn2:targetRef>
+          <bpmn2:assignment>
+            <bpmn2:from xsi:type="bpmn2:tFormalExpression"><![CDATA[approvePassengerForFlight]]></bpmn2:from>
+            <bpmn2:to xsi:type="bpmn2:tFormalExpression"><![CDATA[_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_TaskNameInputX]]></bpmn2:to>
+          </bpmn2:assignment>
+        </bpmn2:dataInputAssociation>
+        <bpmn2:dataInputAssociation>
+          <bpmn2:sourceRef>passenger</bpmn2:sourceRef>
+          <bpmn2:targetRef>_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_passengerInputX</bpmn2:targetRef>
+        </bpmn2:dataInputAssociation>
+        <bpmn2:dataInputAssociation>
+          <bpmn2:targetRef>_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_SkippableInputX</bpmn2:targetRef>
+          <bpmn2:assignment>
+            <bpmn2:from xsi:type="bpmn2:tFormalExpression"><![CDATA[false]]></bpmn2:from>
+            <bpmn2:to xsi:type="bpmn2:tFormalExpression"><![CDATA[_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_SkippableInputX]]></bpmn2:to>
+          </bpmn2:assignment>
+        </bpmn2:dataInputAssociation>
+        <bpmn2:dataOutputAssociation>
+          <bpmn2:sourceRef>_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_isPassengerApprovedBySecurityOutputX</bpmn2:sourceRef>
+          <bpmn2:targetRef>isPassengerApprovedBySecurity</bpmn2:targetRef>
+        </bpmn2:dataOutputAssociation>
+      </bpmn2:userTask>
+    </bpmn2:subProcess>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="flightProcess">
+      <bpmndi:BPMNShape id="shape__40AA4B24-D143-4366-9905-7D743323CA44" bpmnElement="_40AA4B24-D143-4366-9905-7D743323CA44" isExpanded="true">
+        <dc:Bounds height="368" width="893" x="605" y="109"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444" bpmnElement="_C1B0AF3D-3380-40B5-B89E-DAEDB89E8444">
+        <dc:Bounds height="102" width="154" x="904" y="187"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__5F3EFAC4-23B9-4CC7-A56F-CFE0840E9251" bpmnElement="_5F3EFAC4-23B9-4CC7-A56F-CFE0840E9251">
+        <dc:Bounds height="56" width="56" x="1122" y="233"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__2C736038-6E6B-4B81-AE80-B95F3761D7A7" bpmnElement="_2C736038-6E6B-4B81-AE80-B95F3761D7A7">
+        <dc:Bounds height="56" width="56" x="703" y="180"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__588057F7-A0DE-4ED9-A917-6F2F48DFC3BB" bpmnElement="_588057F7-A0DE-4ED9-A917-6F2F48DFC3BB">
+        <dc:Bounds height="102" width="154" x="1290" y="180"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__4494C0A3-D3E9-47D5-A87D-F16ADF56165E" bpmnElement="_4494C0A3-D3E9-47D5-A87D-F16ADF56165E">
+        <dc:Bounds height="56" width="56" x="1128" y="359"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__791F1D80-580A-40CE-AADA-AD772533C05F" bpmnElement="_791F1D80-580A-40CE-AADA-AD772533C05F">
+        <dc:Bounds height="56" width="56" x="1364" y="348"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge_shape__2C736038-6E6B-4B81-AE80-B95F3761D7A7_to_shape__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444" bpmnElement="_DF60F595-7CD5-4F5C-B62D-73A291C22163">
+        <di:waypoint x="731" y="208"/>
+        <di:waypoint x="904" y="238"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__C1B0AF3D-3380-40B5-B89E-DAEDB89E8444_to_shape__5F3EFAC4-23B9-4CC7-A56F-CFE0840E9251" bpmnElement="_0783A607-D9AC-4406-A758-02474EE49FE6">
+        <di:waypoint x="981" y="238"/>
+        <di:waypoint x="1122" y="261"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__5F3EFAC4-23B9-4CC7-A56F-CFE0840E9251_to_shape__4494C0A3-D3E9-47D5-A87D-F16ADF56165E" bpmnElement="_AD20DCAD-F259-451D-887F-62D75B708EC8">
+        <di:waypoint x="1150" y="261"/>
+        <di:waypoint x="1151" y="321"/>
+        <di:waypoint x="1156" y="359"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__5F3EFAC4-23B9-4CC7-A56F-CFE0840E9251_to_shape__588057F7-A0DE-4ED9-A917-6F2F48DFC3BB" bpmnElement="_2742A6CB-0C90-4E94-AFD8-2FE44BB80E61">
+        <di:waypoint x="1150" y="261"/>
+        <di:waypoint x="1247" y="242"/>
+        <di:waypoint x="1290" y="231"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__588057F7-A0DE-4ED9-A917-6F2F48DFC3BB_to_shape__791F1D80-580A-40CE-AADA-AD772533C05F" bpmnElement="_3D6A8B2F-D175-4181-9291-B7AD81A15FDB">
+        <di:waypoint x="1367" y="231"/>
+        <di:waypoint x="1392" y="348"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="shape__6410A49B-2583-4457-8A1B-6D295C050D82" bpmnElement="_6410A49B-2583-4457-8A1B-6D295C050D82">
+        <dc:Bounds height="56" width="56" x="320" y="558"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__7C752801-1F4B-4DB8-B97D-733F98BA0A63" bpmnElement="_7C752801-1F4B-4DB8-B97D-733F98BA0A63">
+        <dc:Bounds height="102" width="154" x="385" y="715"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__9351149F-6BAD-4BC6-8949-ACD2D4C93CE8" bpmnElement="_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8">
+        <dc:Bounds height="102" width="154" x="725" y="734"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__73A4D85C-E170-4B0E-9AE8-CEE5DF46BF83" bpmnElement="_73A4D85C-E170-4B0E-9AE8-CEE5DF46BF83">
+        <dc:Bounds height="56" width="56" x="1108" y="771"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge_shape__6410A49B-2583-4457-8A1B-6D295C050D82_to_shape__7C752801-1F4B-4DB8-B97D-733F98BA0A63" bpmnElement="_937019B2-0EA7-4610-8BE8-B22032D22318">
+        <di:waypoint x="348" y="586"/>
+        <di:waypoint x="462" y="715"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__7C752801-1F4B-4DB8-B97D-733F98BA0A63_to_shape__9351149F-6BAD-4BC6-8949-ACD2D4C93CE8" bpmnElement="_210CD055-AB60-4D39-AD5C-5037D5BF21E8">
+        <di:waypoint x="462" y="766"/>
+        <di:waypoint x="725" y="785"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__9351149F-6BAD-4BC6-8949-ACD2D4C93CE8_to_shape__73A4D85C-E170-4B0E-9AE8-CEE5DF46BF83" bpmnElement="_FF1950B5-759D-4350-968E-D6957AC2B9DF">
+        <di:waypoint x="802" y="785"/>
+        <di:waypoint x="1108" y="799"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmn2:relationship type="BPSimData">
+    <bpmn2:extensionElements>
+      <bpsim:BPSimData>
+        <bpsim:Scenario id="default" name="Simulationscenario">
+          <bpsim:ScenarioParameters/>
+          <bpsim:ElementParameters elementRef="_6410A49B-2583-4457-8A1B-6D295C050D82">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters elementRef="_7C752801-1F4B-4DB8-B97D-733F98BA0A63">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters>
+              <bpsim:Availability>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters>
+              <bpsim:UnitCost>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters elementRef="_9351149F-6BAD-4BC6-8949-ACD2D4C93CE8">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters>
+              <bpsim:Availability>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters>
+              <bpsim:UnitCost>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+        </bpsim:Scenario>
+      </bpsim:BPSimData>
+    </bpmn2:extensionElements>
+    <bpmn2:source>_XD21sDxsEDmBKclxIcB4iw</bpmn2:source>
+    <bpmn2:target>_XD21sDxsEDmBKclxIcB4iw</bpmn2:target>
+  </bpmn2:relationship>
+</bpmn2:definitions>

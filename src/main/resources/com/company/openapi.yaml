@@ -1,0 +1,615 @@
+---
+openapi: 3.0.3
+info:
+  title: Generated API
+  version: "1.0"
+paths:
+  /flightProcess:
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListFlightProcessModelOutput'
+    post:
+      parameters:
+      - name: businessKey
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FlightProcessModelInput'
+      responses:
+        "200":
+          description: OK
+  /flightProcess/approvePassengerForFlight/schema:
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MapStringObject'
+  /flightProcess/finalizePassengerList/schema:
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MapStringObject'
+  /flightProcess/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightProcessModelOutput'
+    put:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FlightProcessModel'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightProcessModelOutput'
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightProcessModelOutput'
+  /flightProcess/{id}/Passenger_Requests_Ticket_Subprocess:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightProcessModelOutput'
+  /flightProcess/{id}/approvePassengerForFlight/{workItemId}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: workItemId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group
+        in: query
+        schema:
+          $ref: '#/components/schemas/ListString'
+      - name: user
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightProcess_11_TaskInput'
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: workItemId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group
+        in: query
+        schema:
+          $ref: '#/components/schemas/ListString'
+      - name: phase
+        in: query
+        schema:
+          default: complete
+          type: string
+      - name: user
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FlightProcess_11_TaskOutput'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightProcessModelOutput'
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: workItemId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group
+        in: query
+        schema:
+          $ref: '#/components/schemas/ListString'
+      - name: phase
+        in: query
+        schema:
+          default: abort
+          type: string
+      - name: user
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightProcessModelOutput'
+  /flightProcess/{id}/approvePassengerForFlight/{workItemId}/schema:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: workItemId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group
+        in: query
+        schema:
+          $ref: '#/components/schemas/ListString'
+      - name: user
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MapStringObject'
+  /flightProcess/{id}/finalizePassengerList/{workItemId}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: workItemId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group
+        in: query
+        schema:
+          $ref: '#/components/schemas/ListString'
+      - name: user
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightProcess_3_TaskInput'
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: workItemId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group
+        in: query
+        schema:
+          $ref: '#/components/schemas/ListString'
+      - name: phase
+        in: query
+        schema:
+          default: complete
+          type: string
+      - name: user
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FlightProcess_3_TaskOutput'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightProcessModelOutput'
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: workItemId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group
+        in: query
+        schema:
+          $ref: '#/components/schemas/ListString'
+      - name: phase
+        in: query
+        schema:
+          default: abort
+          type: string
+      - name: user
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightProcessModelOutput'
+  /flightProcess/{id}/finalizePassengerList/{workItemId}/schema:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: workItemId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group
+        in: query
+        schema:
+          $ref: '#/components/schemas/ListString'
+      - name: user
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MapStringObject'
+  /flightProcess/{id}/passengerRequestTicket:
+    post:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Passenger'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FlightProcessModelOutput'
+  /flightProcess/{id}/tasks:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group
+        in: query
+        schema:
+          $ref: '#/components/schemas/ListString'
+      - name: user
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListWorkItem'
+  /hello-resteasy:
+    get:
+      responses:
+        "200":
+          description: OK
+  /hello-spring:
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+  /messaging/topics:
+    get:
+      responses:
+        "200":
+          description: OK
+  /resteasy-jackson/quarks:
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SetQuark'
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Quark'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SetQuark'
+    delete:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Quark'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SetQuark'
+components:
+  schemas:
+    Quark:
+      type: object
+      properties:
+        description:
+          type: string
+        name:
+          type: string
+    SetQuark:
+      uniqueItems: true
+      type: array
+      items:
+        $ref: '#/components/schemas/Quark'
+    ListString:
+      type: array
+      items:
+        type: string
+    Flight:
+      type: object
+      properties:
+        columnCount:
+          format: int32
+          type: integer
+        id:
+          type: string
+        passengerList:
+          $ref: '#/components/schemas/ListPassenger'
+        rowCount:
+          format: int32
+          type: integer
+        score:
+          $ref: '#/components/schemas/HardSoftScore'
+    Passenger:
+      type: object
+      properties:
+        name:
+          type: string
+        preferredSeatType:
+          $ref: '#/components/schemas/Type'
+        seat:
+          $ref: '#/components/schemas/Seat'
+    ListPassenger:
+      type: array
+      items:
+        $ref: '#/components/schemas/Passenger'
+    HardSoftScore:
+      type: object
+      properties:
+        initScore:
+          format: int32
+          type: integer
+        initPrefix:
+          type: string
+        solutionInitialized:
+          type: boolean
+        hardScore:
+          format: int32
+          type: integer
+        softScore:
+          format: int32
+          type: integer
+        feasible:
+          type: boolean
+    Type:
+      enum:
+      - AISLE
+      - OTHER
+      - WINDOW
+      type: string
+    Seat:
+      type: object
+      properties:
+        seatIdentifier:
+          type: string
+        type:
+          $ref: '#/components/schemas/Type'
+    FlightProcessModelOutput:
+      type: object
+      properties:
+        flight:
+          $ref: '#/components/schemas/Flight'
+        id:
+          type: string
+    FlightProcess_11_TaskOutput:
+      type: object
+      properties:
+        isPassengerApprovedBySecurity:
+          type: boolean
+    FlightProcess_3_TaskOutput:
+      type: object
+    FlightProcessModelInput:
+      type: object
+      properties:
+        flight:
+          $ref: '#/components/schemas/Flight'
+    ListFlightProcessModelOutput:
+      type: array
+      items:
+        $ref: '#/components/schemas/FlightProcessModelOutput'
+    MapStringObject:
+      type: object
+      additionalProperties: {}
+    FlightProcess_11_TaskInput:
+      type: object
+      properties:
+        _id:
+          type: string
+        _name:
+          type: string
+        passenger:
+          $ref: '#/components/schemas/Passenger'
+        id:
+          type: string
+        name:
+          type: string
+    FlightProcess_3_TaskInput:
+      type: object
+      properties:
+        _id:
+          type: string
+        _name:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+    WorkItem:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        nodeInstanceId:
+          type: string
+        parameters:
+          $ref: '#/components/schemas/MapStringObject'
+        phase:
+          type: string
+        phaseStatus:
+          type: string
+        results:
+          $ref: '#/components/schemas/MapStringObject'
+        state:
+          format: int32
+          type: integer
+    ListWorkItem:
+      type: array
+      items:
+        $ref: '#/components/schemas/WorkItem'
+    FlightProcessModel:
+      type: object
+      properties:
+        flight:
+          $ref: '#/components/schemas/Flight'
+        id:
+          type: string
