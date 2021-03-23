@@ -76,7 +76,7 @@ http://localhost:8080/
 
 Pour gérer plusieurs ssh keys pour github il faut y mettre un fichier nommé config et qui contient:
 
-``
+```
 Host github_fred
   Hostname github.com
   IdentityFile ~/.ssh/github_rsa
@@ -88,5 +88,10 @@ Host github_mch
   IdentityFile ~/ssh/github_mch_planner
   #IdentitiesOnly yes
   User git  
- ``
+```
+
+ - il y a aussi les fichiers gitconfig a paramétrer, ils sont sur 3 niveaux:
+Local: .git/config in the current repository
+Global: .gitconfig in the user's home directory
+System: gitconfig in the system configuration directory (e.g. /etc on Linux)
  
