@@ -94,4 +94,4 @@ Host github_mch
 Local: .git/config in the current repository
 Global: .gitconfig in the user's home directory
 System: gitconfig in the system configuration directory (e.g. /etc on Linux)
- 
+   n'a pas l'air de compter vraiment pour cet aspect multi user
